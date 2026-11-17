@@ -1,0 +1,18 @@
+[package]
+name = "uia-core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+common-types = { path = "../common-types" }
+parking_lot.workspace = true
+rand.workspace = true
+tokio.workspace = true
+tracing.workspace = true
+uiautomation.workspace = true
+windows.workspace = true
+windows-core.workspace = true
+
+[dev-dependencies]
+mock-qq-win = { path = "../mock-qq-win" }

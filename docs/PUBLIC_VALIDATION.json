@@ -1,0 +1,65 @@
+{
+  "date": "2026-11-17",
+  "scope": "OFFLINE_PUBLIC_EXPORT_VALIDATION",
+  "live_qq_e2e_verified": false,
+  "toolchain": {
+    "rust": "1.100.0",
+    "target": "x86_64-pc-windows-gnu",
+    "gcc": "16.2.0"
+  },
+  "coding_style": {
+    "passed": true,
+    "rust_files": 224
+  },
+  "fmt": {
+    "passed": true
+  },
+  "clippy": {
+    "passed": true,
+    "all_targets": true,
+    "deny_warnings": true
+  },
+  "release_build": {
+    "passed": true,
+    "binaries": [
+      "qq-uia-adapter",
+      "qq-qa-harness"
+    ]
+  },
+  "workspace_tests": {
+    "passed": 280,
+    "failed": 1,
+    "ignored": 0,
+    "command": "cargo test --workspace",
+    "known_failure": "uia-core::mock_uia_integration::uia_captures_mock_tree_switches_group_and_sends_in_background",
+    "failure_assertion": "The mock window became foreground during a background send.",
+    "isolated_serial_recheck": "failed at the same assertion; assertion was not removed or weakened",
+    "cause": "Not established; not assumed to be a harmless environment issue."
+  },
+  "doc_tests": {
+    "exit_code": 0,
+    "tests_found": 0
+  },
+  "self_test": {
+    "passed": 14,
+    "total": 14,
+    "result": "SELF_TEST_PASSED",
+    "scope": "MOCK_WIN32_VERIFIED"
+  },
+  "qa": {
+    "overall_passed": true,
+    "total_categories": 13,
+    "passed_categories": 13,
+    "total_cases": 43,
+    "passed_cases": 42,
+    "skipped_cases": 1,
+    "failed_cases": 0,
+    "total_benchmarks": 13,
+    "verification_scope": "OFFLINE_MOCK_AND_TREE_REPLAY (NOT_LIVE_QQ_E2E)",
+    "live_e2e_verified": false
+  },
+  "sanitized_fixture_files": 13,
+  "excluded_source_files": 903,
+  "original_history_included": false,
+  "privacy_review": "Known private markers, excluded artifact paths, tracked file contents and documentation links checked; no claim that regex scanning proves arbitrary text anonymous."
+}

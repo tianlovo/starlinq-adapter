@@ -1,0 +1,31 @@
+[package]
+name = "qa-harness"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "qq-qa-harness"
+path = "src/main.rs"
+
+[dependencies]
+adapter-server = { path = "../adapter-server" }
+anyhow.workspace = true
+async-trait.workspace = true
+axum.workspace = true
+base64.workspace = true
+chrono.workspace = true
+clap.workspace = true
+common-types = { path = "../common-types" }
+futures-util.workspace = true
+mock-qq-win = { path = "../mock-qq-win" }
+parking_lot.workspace = true
+qqnt-driver = { path = "../qqnt-driver" }
+reqwest.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+storage = { path = "../storage" }
+tokio.workspace = true
+tokio-tungstenite.workspace = true
+uia-core = { path = "../uia-core" }
+windows.workspace = true

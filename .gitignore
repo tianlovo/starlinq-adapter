@@ -1,0 +1,21 @@
+.cache/
+.runtime/
+/target/
+*.log
+*.pdb
+*.db
+*.db-wal
+*.db-shm
+__pycache__/
+*.pyc
+
+# Raw desktop evidence stays local; only curated, sanitized fixtures are public.
+/docs/gpt-live-verification/evidence/
+/docs/gpt-live-verification/live-runs/
+/docs/live-verification-*/
+*.sqlite
+*.sqlite3
+*.env
+*.pem
+*.pfx
+*.key

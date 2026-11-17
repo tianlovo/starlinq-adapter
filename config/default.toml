@@ -1,0 +1,81 @@
+# Public sample: configure your own explicitly authorized test targets before live use.
+# Default configuration for qq-uia-adapter
+
+[server]
+host = "127.0.0.1"
+port = 18770
+# access_token = "change-me-if-exposed"
+
+[target]
+group_name = "Demo测试群"
+strict_below_members = 10
+require_member_count_verified = true
+# 仅允许向此处显式列出的好友昵称/备注发送私聊消息（默认空数组拒绝一切私聊外发）
+allowed_private_friends = []
+# 可选多群监控列表（为空时回退至 group_name；设为大群前需配合下方显式放行开关）
+monitored_groups = []
+# 仅对 monitored_groups 中显式配置的目标群放开 strict_below_members 人数限制（默认 false 严守安全上限）
+allow_large_monitored_groups = false
+
+[interaction]
+default_mode = "auto"
+allow_focus_fallback = true
+poll_interval_ms = 800
+char_delay_min_ms = 35
+char_delay_max_ms = 90
+min_send_interval_ms = 1500
+send_shortcut = "enter"
+extra_process_names = []
+extra_window_classes = []
+
+[bot]
+self_id = 10001
+self_nicknames = []
+auto_ping_reply = false
+
+[qq_client]
+executable_path = 'C:\Program Files\Tencent\QQ\QQNT\QQ.exe'
+auto_launch_or_wake = false
+launch_args = [
+  "--force-renderer-accessibility",
+  "--disable-renderer-backgrounding",
+  "--disable-backgrounding-occluded-windows",
+  "--disable-features=AutoDisableAccessibility,CalculateNativeWinOcclusion",
+]
+startup_timeout_ms = 15000
+
+[storage]
+db_path = ".runtime/adapter.db"
+
+[onebot]
+reverse_ws_urls = []
+# reverse_ws_urls = ["ws://127.0.0.1:6199/ws"]
+# reverse_ws_api_urls = ["ws://127.0.0.1:6199/ws/api"]
+# reverse_ws_event_urls = ["ws://127.0.0.1:6199/ws/event"]
+# http_post_urls = ["http://127.0.0.1:6200/onebot/event"]
+# secret = "webhook-hmac-sha1-secret"
+# post_message_sent = false
+# rate_limit_interval_ms = 250
+heartbeat_interval_ms = 15000
+reconnect_interval_ms = 3000
+
+[scheduler]
+enabled = true
+burst_window_ms = 3000
+burst_enter_threshold = 16
+burst_exit_threshold = 6
+single_poll_burst_threshold = 12
+critical_response_window_ms = 30000
+contextual_response_window_ms = 20000
+ordinary_response_window_ms = 8000
+burst_ordinary_sample_stride = 5
+hard_shed_queue_depth = 64
+max_pending_events = 1024
+drop_expired_events = true
+session_dwell_min_ms = 1200
+urgent_preempt_dwell_ms = 350
+patrol_interval_ms = 2500
+group_quantum_messages = 8
+active_thread_ttl_ms = 20000
+command_prefixes = ["/", "!", "！", ".", "。"]
+wake_keywords = []

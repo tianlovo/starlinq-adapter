@@ -1,0 +1,28 @@
+[package]
+name = "qqnt-driver"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+common-types = { path = "../common-types" }
+storage = { path = "../storage" }
+uia-core = { path = "../uia-core" }
+async-trait = { workspace = true }
+chrono = { workspace = true }
+parking_lot = { workspace = true }
+rand = { workspace = true }
+base64 = { workspace = true }
+regex = { workspace = true }
+reqwest = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+sha2 = { workspace = true }
+tokio = { workspace = true }
+tracing = { workspace = true }
+uiautomation = { workspace = true }
+windows = { workspace = true }
+
+[dev-dependencies]
+mock-qq-win = { path = "../mock-qq-win" }
+tokio = { workspace = true }
